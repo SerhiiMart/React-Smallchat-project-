@@ -4,11 +4,12 @@ import './App.css';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
+import 'firebase/analytics';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
-firebase.initializeApp({
+const firebaseConfig = {
   apiKey: "AIzaSyAJy62L8QxbKyd2QtzqOlrxW-rV7lZN68g",
   authDomain: "smallchat-bb380.firebaseapp.com",
   databaseURL: "https://smallchat-bb380-default-rtdb.firebaseio.com",
@@ -17,9 +18,10 @@ firebase.initializeApp({
   messagingSenderId: "929859003196",
   appId: "1:929859003196:web:3ec2df923ef5911f27f439",
   measurementId: "G-Y2RP3K9QYZ"
-});
-
-
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const analytics = firebase.analytics();
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
@@ -104,7 +106,7 @@ function ChatRoom() {
 
     <form onSubmit={sendMessage}>
 
-      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Try to be civil" />
+      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
 
       <button type="submit" disabled={!formValue}>🕊️</button>
 
@@ -125,5 +127,6 @@ function ChatMessage(props) {
     </div>
   </>)
 }
+
 
 export default App;
