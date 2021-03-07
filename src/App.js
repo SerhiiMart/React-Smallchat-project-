@@ -10,14 +10,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAJy62L8QxbKyd2QtzqOlrxW-rV7lZN68g",
-  authDomain: "smallchat-bb380.firebaseapp.com",
-  databaseURL: "https://smallchat-bb380-default-rtdb.firebaseio.com",
-  projectId: "smallchat-bb380",
-  storageBucket: "smallchat-bb380.appspot.com",
-  messagingSenderId: "929859003196",
-  appId: "1:929859003196:web:3ec2df923ef5911f27f439",
-  measurementId: "G-Y2RP3K9QYZ"
++++
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
